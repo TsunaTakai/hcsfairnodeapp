@@ -12,7 +12,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c38c5f53-ebe8-4e4b-b2b5-53827545b65c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>server.ts</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <StartWebBrowser>True</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -34,10 +35,16 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\typings\node\node.d.ts" />
-    <TypeScriptCompile Include="server.ts" />
+    <Content Include="db.sqlite3" />
     <Content Include="package.json" />
+    <Content Include="public\stylesheets\style.css" />
+    <Content Include="rasiot.sqlite3" />
     <Content Include="README.md" />
+    <Content Include="views\board.ejs" />
+    <Content Include="views\error.ejs" />
+    <Content Include="views\index.ejs" />
+    <Content Include="views\login.ejs" />
+    <Content Include="views\register.ejs" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />
     <Content Include="bin\ChangeConfig.ps1" />
@@ -47,9 +54,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
-    <Folder Include="Scripts\" />
-    <Folder Include="Scripts\typings\" />
-    <Folder Include="Scripts\typings\node\" />
+    <Folder Include="public\" />
+    <Folder Include="public\images\" />
+    <Folder Include="public\javascripts\" />
+    <Folder Include="public\stylesheets\" />
+    <Folder Include="routes\" />
+    <Folder Include="views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="app.js" />
+    <Compile Include="routes\boards.js" />
+    <Compile Include="routes\index.js" />
+    <Compile Include="routes\login.js" />
+    <Compile Include="routes\logout.js" />
+    <Compile Include="routes\register.js" />
+    <Compile Include="routes\restapi.js" />
+    <Compile Include="routes\users.js" />
+    <Compile Include="setUser.js" />
+    <Compile Include="sqlite3Connection.js" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
